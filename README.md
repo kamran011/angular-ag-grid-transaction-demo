@@ -1,6 +1,6 @@
 # Trade transaction report — Angular + AG Grid Community
 
-**Repository:** `https://github.com/kamran011/<your-repo-name>` (replace after you create the GitHub repo)
+**Repository:** [https://github.com/kamran011/angular-ag-grid-transaction-demo](https://github.com/kamran011/angular-ag-grid-transaction-demo)
 
 Angular **20** showcase aligned with a typical **bank / trade reporting** job description: large client-side datasets, rich filters, quick search, advanced multi-field search, multi-column sort, pagination that resets when the model changes, and **Sum / Average / Max / Min** over the **filtered** row set.
 
@@ -44,18 +44,18 @@ npm run build
 
 ## Publish to GitHub (`kamran011`)
 
-After local verification:
+Repo: [angular-ag-grid-transaction-demo](https://github.com/kamran011/angular-ag-grid-transaction-demo).
 
-1. Create a **public** repository on [github.com/kamran011](https://github.com/kamran011) (e.g. `angular-ag-grid-transaction-demo`).
-2. From this project folder:
+From this project folder (after you click **Create repository** on GitHub):
 
-   ```bash
-   git remote add origin https://github.com/kamran011/<your-repo-name>.git
-   git branch -M main
-   git push -u origin main
-   ```
+```bash
+git remote add origin https://github.com/kamran011/angular-ag-grid-transaction-demo.git
+git branch -M main
+git add -A && git commit -m "docs: set canonical GitHub URL"   # if you have local README changes
+git push -u origin main
+```
 
-3. Put the final URL at the top of this README for cover letters and applications.
+If `git remote add` fails because `origin` already exists: `git remote set-url origin https://github.com/kamran011/angular-ag-grid-transaction-demo.git`
 
 ## License
 
