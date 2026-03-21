@@ -73,7 +73,7 @@ export function createTransactionColumnDefs(): ColDef<TransactionRow>[] {
       type: 'numericColumn',
       filterParams: {
         filterOptions: ['equals', 'notEqual', 'lessThan', 'greaterThan', 'inRange'],
-        allowedCharPattern: '\\d\\-\\.\\,',
+        allowedCharPattern: '\\-\\d\\.,',
         debounceMs: 250,
       },
       valueFormatter: (p) =>
@@ -87,7 +87,7 @@ export function createTransactionColumnDefs(): ColDef<TransactionRow>[] {
       type: 'numericColumn',
       filterParams: {
         filterOptions: ['equals', 'notEqual', 'lessThan', 'greaterThan', 'inRange'],
-        allowedCharPattern: '\\d\\-\\.\\,',
+        allowedCharPattern: '\\-\\d\\.,',
         debounceMs: 250,
       },
       valueFormatter: (p) =>
