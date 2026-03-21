@@ -1,0 +1,14 @@
+@use 'ag-grid-community/styles/ag-grid.css';
+@use 'ag-grid-community/styles/ag-theme-quartz.css';
+
+html,
+body {
+  height: 100%;
+  margin: 0;
+}
+
+body {
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+  background: #f4f6f8;
+  color: #1a1f2e;
+}

@@ -1,0 +1,88 @@
+<div class="page">
+  <header class="page__header">
+    <h1 class="page__title">Trade transaction report</h1>
+    <p class="page__lede">
+      Angular + AG Grid Community: column filters, quick search, advanced multi-field search, Shift+click
+      multi-sort, pagination, and aggregates over the <strong>filtered</strong> dataset.
+    </p>
+  </header>
+
+  <section class="toolbar" aria-label="Search">
+    <label class="toolbar__field">
+      <span class="toolbar__label">Quick search (single term)</span>
+      <input
+        type="search"
+        class="toolbar__input"
+        [value]="quickFilterDraft()"
+        (input)="onQuickFilterInput($any($event.target).value)"
+        placeholder="Type to filter visible columns…"
+        autocomplete="off"
+      />
+    </label>
+    <button type="button" class="toolbar__btn" (click)="openAdvanced()">Advanced search</button>
+  </section>
+
+  <ag-grid-angular
+    class="ag-theme-quartz grid"
+    [gridOptions]="gridOptions"
+    [rowData]="rowData"
+  />
+
+  <app-advanced-search-dialog (applyModel)="onAdvancedApply($event)" />
+
+  <footer class="footer" aria-label="Aggregation">
+    <div class="footer__row">
+      <div class="footer__meta">
+        <span
+          >Filtered rows:
+          <strong>{{ filteredRowCount() | number }}</strong> (aggregates use this set, not only the current
+          page)</span
+        >
+      </div>
+      <div class="footer__controls">
+        <label class="footer__ctl">
+          <span>Function</span>
+          <select
+            class="footer__select"
+            [ngModel]="aggType()"
+            (ngModelChange)="aggType.set($event); onAggChange()"
+          >
+            <option value="sum">Sum</option>
+            <option value="avg">Average</option>
+            <option value="max">Max</option>
+            <option value="min">Min</option>
+          </select>
+        </label>
+        <div class="footer__cols" role="group" aria-label="Columns to aggregate">
+          <span class="footer__cols-label">Columns</span>
+          <label class="footer__chk">
+            <input
+              type="checkbox"
+              [checked]="aggAmount()"
+              (change)="aggAmount.set($any($event.target).checked); onAggChange()"
+            />
+            Amount
+          </label>
+          <label class="footer__chk">
+            <input
+              type="checkbox"
+              [checked]="aggFee()"
+              (change)="aggFee.set($any($event.target).checked); onAggChange()"
+            />
+            Fee
+          </label>
+        </div>
+      </div>
+    </div>
+    <div class="footer__results">
+      @for (kv of aggResult() | keyvalue; track kv.key) {
+        <div class="footer__metric">
+          <span class="footer__metric-key">{{ kv.key }}</span>
+          <span class="footer__metric-val">{{
+            kv.value == null ? '—' : (kv.value | number: '1.2-2')
+          }}</span>
+        </div>
+      }
+    </div>
+  </footer>
+</div>
