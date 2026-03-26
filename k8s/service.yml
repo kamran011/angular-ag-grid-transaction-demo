@@ -1,32 +1,15 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: angular-graphql-dashboard
+  name: angular-ag-grid-transaction-demo
   labels:
-    app: angular-graphql-dashboard
+    app: angular-ag-grid-transaction-demo
 spec:
   type: LoadBalancer
   selector:
-    app: angular-graphql-dashboard
+    app: angular-ag-grid-transaction-demo
   ports:
     - name: http
       port: 80
       targetPort: 80
       protocol: TCP
-
-apiVersion: v1
-kind: Service
-metadata:
-  name: angular-graphql-dashboard
-  labels:
-    app: angular-graphql-dashboard
-spec:
-  type: LoadBalancer
-  selector:
-    app: angular-graphql-dashboard
-  ports:
-    - name: http
-      port: 80
-      targetPort: 80
-      protocol: TCP
-

@@ -1,21 +1,21 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: angular-graphql-dashboard
+  name: angular-ag-grid-transaction-demo
   labels:
-    app: angular-graphql-dashboard
+    app: angular-ag-grid-transaction-demo
 spec:
   replicas: 2
   selector:
     matchLabels:
-      app: angular-graphql-dashboard
+      app: angular-ag-grid-transaction-demo
   template:
     metadata:
       labels:
-        app: angular-graphql-dashboard
+        app: angular-ag-grid-transaction-demo
     spec:
       containers:
-        - name: angular-graphql-dashboard
+        - name: angular-ag-grid-transaction-demo
           image: kamran011/angular-ag-grid-transaction-demo:latest
           imagePullPolicy: Always
           ports:
@@ -36,4 +36,3 @@ spec:
             periodSeconds: 20
             timeoutSeconds: 3
             failureThreshold: 3
-
