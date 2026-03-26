@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
         - name: angular-ag-grid-transaction-demo
-          image: kamran011/angular-ag-grid-transaction-demo:latest
+          image: kamranqayyum94/angular-ag-grid-transaction-demo:latest
           imagePullPolicy: Always
           ports:
             - containerPort: 80
