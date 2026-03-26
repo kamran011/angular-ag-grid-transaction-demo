@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
         - name: angular-graphql-dashboard
-          image: kamranqayyum94/angular-ag-grid-transaction-demo:latest
+          image: kamran011/angular-ag-grid-transaction-demo:latest
           imagePullPolicy: Always
           ports:
             - containerPort: 80

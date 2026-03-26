@@ -24,8 +24,8 @@ jobs:
           context: .
           push: true
           tags: |
-            kamranqayyum94/angular-ag-grid-transaction-demo:latest
-            kamranqayyum94/angular-ag-grid-transaction-demo:sha-${{ github.sha }}
+            kamran011/angular-ag-grid-transaction-demo:latest
+            kamran011/angular-ag-grid-transaction-demo:sha-${{ github.sha }}
 
       - name: Print Kubernetes deploy command
         shell: bash
