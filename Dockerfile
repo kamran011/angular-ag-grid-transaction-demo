@@ -11,7 +11,12 @@ RUN npm ci
 
 # Copy the rest of the source and build
 COPY . .
-RUN npm run build
+RUN npm run build && \
+    if [ -d "dist/ag-grid-jd-demo/browser" ]; then \
+      cp -R dist/ag-grid-jd-demo/browser/. /app/out/; \
+    else \
+      cp -R dist/ag-grid-jd-demo/. /app/out/; \
+    fi
 
 FROM nginx:alpine AS runtime
 
@@ -29,8 +34,8 @@ RUN rm -f /etc/nginx/conf.d/default.conf && \
     '}' \
     > /etc/nginx/conf.d/default.conf
 
-# Copy Angular build output (application builder outputs: dist/<project>/browser)
-COPY --from=builder /app/dist/angular-dashboard/browser/ /usr/share/nginx/html/
+# Copy Angular build output (normalized into /app/out)
+COPY --from=builder /app/out/ /usr/share/nginx/html/
 
 EXPOSE 80
 
