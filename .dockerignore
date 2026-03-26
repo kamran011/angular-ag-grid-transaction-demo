@@ -1,0 +1,25 @@
+# Dependencies and build output (reinstalled/built in the image)
+node_modules
+dist
+.angular
+
+# Version control and editor noise
+.git
+.gitignore
+.github
+
+# Tests and coverage
+coverage
+**/*.spec.ts
+
+# Docs (not needed for ng build)
+*.md
+
+# IDE
+.vscode
+.idea
+
+# OS
+.DS_Store
+Thumbs.db
+
